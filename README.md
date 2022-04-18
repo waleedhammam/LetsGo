@@ -1,5 +1,5 @@
 # LetsGo
-playground of distrubed go, a simple commit log service
+playground of distrubed go, a commit log service
 
 ## Run
 
