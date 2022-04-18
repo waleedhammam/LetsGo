@@ -7,6 +7,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
+// NewHTTPServer create new server from specific address :8080 for example
 func NewHTTPServer(addr string) *http.Server {
 	httpsrv := newHTTPServer()
 	r := mux.NewRouter()
@@ -28,18 +29,22 @@ func newHTTPServer() *httpServer {
 	}
 }
 
+// ProduceRequest is a struct to hold request record
 type ProduceRequest struct {
 	Record Record `json:"record"`
 }
 
+// ProduceResponse is a struct to hold response offset
 type ProduceResponse struct {
 	Offset uint64 `json:"offset"`
 }
 
+// ConsumeRequest is a struct to hold consume request
 type ConsumeRequest struct {
 	Offset uint64 `json:"offset"`
 }
 
+// ConsumeRequest is a struct to hold consume response
 type ConsumeResponse struct {
 	Record Record `json:"record"`
 }
